@@ -36,6 +36,15 @@
     <%= form.text_field :sku %>
   </div>
 
+  <div class="field">
+    <%= form.label :categories %>
+    <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>
+      <%= b.label class:"label-checkbox" do %>
+        <%= b.check_box + b.text %>
+      <% end %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
